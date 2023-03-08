@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsx src/server.ts --watch",
-    "build":  "tsup src/ --format cjs,esm",
+    "build":  "tsup src/",
     "start" : "node dist/server.js"
   },
   "keywords": [],
