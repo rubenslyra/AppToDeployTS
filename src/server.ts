@@ -2,8 +2,6 @@ import { PrismaClient } from '@prisma/client';
 import fastfy from 'fastify';
 import { z } from 'zod';
 
-const url = "0.0.0.0";
-const port = 8000;
 const prisma = new PrismaClient();
 
 const app = fastfy();
@@ -39,9 +37,9 @@ app.post('/users', async (request, reply) => {
 });
 
 app.listen({
-    host: url,
+    host: '0.0.0.0',
     // Se a variável de ambiente PORT estiver definida, use-a, caso contrário, use a porta 8000. Utilizar o Number() para converter a string em número
-    port: process.env.PORT ? Number(process.env.PORT) : port
+    port: process.env.PORT ? Number(process.env.PORT) : 8000
 }).then(() => {
-    console.log(`🚢 Servidor rodando em ${url}:${port}`);
+    console.log(`🚢 Servidor rodando em http://localhost:8000`);
 });
