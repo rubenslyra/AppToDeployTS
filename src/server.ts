@@ -19,7 +19,7 @@ app.post('/users', async (request, reply) => {
     // Schema para validar os dados do body da requisição
     const createUserSchema = z.object({
         name: z.string(),
-        email: z.string(),
+        email: z.string().email(),
     });
     
     // para pegar as informações do body da requisição
